@@ -21,14 +21,11 @@ function calculateAll() {
   // end of test
 
   // ITERATION 2
-  //... your code goes here
   let products = document.getElementsByClassName('product');
   for (let i = 0; i < products.length; i++) {
     updateSubtotal(products[i]);
   }
   // ITERATION 3
-  //... your code goes here
-
   let total = 0;
   for (let i = 0; i < products.length; i++) {
     total += Number(products[i].querySelector('.subtotal span').innerHTML);
@@ -37,11 +34,9 @@ function calculateAll() {
 }
 
 // ITERATION 4
-
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
   let targetProduct = target.parentNode.parentNode;
   let targetCart = targetProduct.parentNode;
   console.log(targetCart);
@@ -52,9 +47,7 @@ function removeProduct(event) {
 }
 
 // ITERATION 5
-
 function createProduct(event) {
-  //... your code goes here
   let target = event.currentTarget;
   let parentTarget = target.parentNode.parentNode;
   let proName = parentTarget
@@ -120,7 +113,6 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
   let removeBtns = document.getElementsByClassName('btn-remove');
   for (let i = 0; i < removeBtns.length; i++) {
     removeBtns[i].addEventListener('click', removeProduct);
@@ -128,11 +120,4 @@ window.addEventListener('load', () => {
 
   let createBtn = document.getElementById('create');
   createBtn.addEventListener('click', createProduct);
-});
-
-window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
-
-  //... your code goes here
 });
